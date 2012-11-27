@@ -1,0 +1,23 @@
+{
+	"packages" : [
+		{
+			"name" : "package 1",
+			"type" : "apt-get",
+			"check" : "check cmd1",
+			"install" : [
+				"install cmd1",
+				"install cmd2"
+			]
+		},
+		{
+			"name" : "package 2",
+			"type" : "apt-get",
+			"check" : "check cmd1",
+			"install" : [
+				"install cmd1",
+				"install cmd2"
+			]
+		}
+	]
+}
+
