@@ -4,6 +4,8 @@ import getopt
 import sys
 from pprint import pprint
 
+termWidth = 80
+
 checkOnly = False
 verbose = False
 force = False
@@ -42,10 +44,17 @@ def install(item):
 
 def install_AptGet(item):
 	if item.has_key('check'):
-		print "run custom check", item['check']
+		# temp is used to get the chars remaining
+		temp = "Checking for " + item['name']
+		print temp
+
+		runCommand(item['check'], termWidth - len(temp))
 	else:
 		print "run regular check"
 	pprint(item)
+
+def runCommand(cmd, dotsLeft):
+	print "running ", cmd
 
 if __name__ == "__main__":
 	main()
